@@ -47,6 +47,7 @@ const SignUp = () => {
           </p>
         </div>
         <div>
+          {/* USER FORM INPUTS */}
           <form onSubmit={submitHandler} className="text-black mt-4 text-sm">
             <div className="flex items-center justify-between">
               {/* FIRSTNAME */}

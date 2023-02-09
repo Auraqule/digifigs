@@ -6,6 +6,7 @@ import Gift from "./Gift";
 import DeleteModal from "./DeleteModal";
 import DashboardHeader from "./DashboardHeader";
 import DashboardSidebar from "./DashboardSidebar";
+import MobileNavigation from "./MobileNavigation";
 export {
   Header,
   ListDetails,
@@ -15,4 +16,5 @@ export {
   DeleteModal,
   DashboardHeader,
   DashboardSidebar,
+  MobileNavigation,
 };

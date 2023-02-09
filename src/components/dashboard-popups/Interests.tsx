@@ -128,7 +128,7 @@ const Interests = ({ setIsPopupOpen }: Iprops) => {
           onClick={completeHandler}
           disabled={selectedInterests.length < 5}
           className={`w-full py-4 text-base hover:bg-[#e27ba6] ${
-            selectedInterests.length > 0
+            selectedInterests.length > 4
               ? "bg-[#EE2A7B] cursor-pointer"
               : "bg-[#ad4d75] cursor-not-allowed"
           }  rounded-lg myt-4 mb-2 sm:mb-3 text-white`}

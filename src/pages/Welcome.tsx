@@ -12,7 +12,6 @@ const Welcome = () => {
   }>({ firstName: "", lastName: "", email: "" });
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("user") || "{}"));
-    console.log(user);
   }, []);
 
   return (

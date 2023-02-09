@@ -11,23 +11,28 @@ const Dashboard = () => {
   return (
     <section className="w-screen min-h-screen flex">
       {/* POPUPS */}
-      <div className="fixed left-0 flex justify-center items-center right-0 top-0 bottom-0 z-10">
-        {/* BACKDROP */}
-        {isPopupOpen && (
+      {isPopupOpen && (
+        <div className="fixed left-0 flex justify-center items-center right-0 top-0 bottom-0 z-10">
+          {/* BACKDROP */}
+
           <div
             onClick={() => setIsPopupOpen(false)}
             className="absolute w-full h-full bg-black opacity-50"
           />
-        )}
-        {isPopupOpen && activePopup === "username" ? (
-          <Username setActivePopup={setActivePopup} />
-        ) : (
-          isPopupOpen && <Interests setIsPopupOpen={setIsPopupOpen} />
-        )}
-      </div>
+
+          {activePopup === "username" ? (
+            <Username setActivePopup={setActivePopup} />
+          ) : (
+            <Interests setIsPopupOpen={setIsPopupOpen} />
+          )}
+        </div>
+      )}
       <DashboardSidebar setSelectedSidebar={setSelectedSidebar} />
       <main className="flex-1 pb-6 ">
-        <DashboardHeader selectedSidebar={selectedSidebar} />
+        <DashboardHeader
+          setSelectedSidebar={setSelectedSidebar}
+          selectedSidebar={selectedSidebar}
+        />
         <div className="flex-1 mt-[10vh] flex justify-center items-center">
           <div className="max-w-[95%] sm:max-w-[420px] flex flex-col items-center text-center">
             <img src={dashboard} alt="dashboard" />
@@ -43,7 +48,7 @@ const Dashboard = () => {
                 setIsPopupOpen(true);
               }}
               className={`bg-[#EE2A7B] ${
-                !isPopupOpen && "z-10"
+                !isPopupOpen && ""
               }  hover:opacity-80 flex items-center mt-10 rounded-lg  space-x-2 px-16`}
             >
               <img className="pt-[6px]" src={plus} alt="plus" />
